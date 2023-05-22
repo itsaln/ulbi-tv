@@ -1,0 +1,14 @@
+import { IBuildOptions } from './types/config'
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import webpack from 'webpack'
+
+export function buildPlugins({
+	paths
+}: IBuildOptions): webpack.WebpackPluginInstance[] {
+	return [
+		new HTMLWebpackPlugin({
+			template: paths.html
+		}),
+		new webpack.ProgressPlugin()
+	]
+}
