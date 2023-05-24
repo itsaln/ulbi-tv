@@ -4,11 +4,15 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { MainPageAsync } from './pages/MainPage/MainPage.async'
 import { AboutPageAsync } from './pages/AboutPage/AboutPage.async'
 
-import './index.scss'
+import './assets/scss/index.scss'
+import { useTheme } from './theme/useTheme'
 
 const App: FC = () => {
+	const { theme, toggleTheme } = useTheme()
+
 	return (
-		<div className='app'>
+		<div className={`app ${theme}`}>
+			<button onClick={toggleTheme}>TOGGLE</button>
 			<Link to={'/'}>Главная</Link>
 			<Link to={'/about'}>О сайте</Link>
 
