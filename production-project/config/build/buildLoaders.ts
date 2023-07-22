@@ -4,14 +4,12 @@ import { IBuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
 
-	// Если не используем typescript - нужен babel-loader
-	const typescriptLoader = {
-		test: /\.tsx?$/,
-		use: 'ts-loader',
-		exclude: /node_modules/
+	const svgLoader = {
+		test: /\.svg$/,
+		use: ['@svgr/webpack']
 	}
 
-	const styleLoader = {
+	const cssLoader = {
 		test: /\.s[ac]ss$/i,
 		use: [
 			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -28,5 +26,21 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
 		]
 	}
 
-	return [typescriptLoader, styleLoader]
+	// Если не используем typescript - нужен babel-loader
+	const typescriptLoader = {
+		test: /\.tsx?$/,
+		use: 'ts-loader',
+		exclude: /node_modules/
+	}
+
+	const fileLoader = {
+		test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+		use: [
+			{
+				loader: 'file-loader'
+			}
+		]
+	}
+
+	return [typescriptLoader, cssLoader, fileLoader, svgLoader]
 }

@@ -21,6 +21,7 @@
     "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/node": "^20.2.1",
     "@types/react": "^18.2.6",
@@ -29,6 +30,7 @@
     "@types/webpack": "^5.28.1",
     "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^6.7.4",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "^2.8.8",
