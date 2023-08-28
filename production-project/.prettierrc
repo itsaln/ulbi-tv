@@ -4,6 +4,24 @@
   "tabWidth": 2,
   "semi": false,
   "singleQuote": true,
+  "jsxSingleQuote": true,
   "bracketSpacing": true,
-  "bracketSameLine": false
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^components/(.*)$",
+    "^layout/(.*)$",
+    "^ui/(.*)$",
+
+    "^app/(.*)$",
+    "^pages/(.*)$",
+    "^shared/(.*)$",
+    "^widgets/(.*)$",
+    "^../(.*)",
+    "^./(.*)",
+    "(.scss)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
